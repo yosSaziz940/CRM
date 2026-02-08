@@ -36,8 +36,8 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
             const parsed = JSON.parse(storedLeads);
             setLeads(parsed.map((l: any) => ({
                 ...l,
-                createdAt: new Date(l.createdAt),
-                updatedAt: new Date(l.updatedAt),
+                createdAt: l.createdAt ? new Date(l.createdAt) : new Date(),
+                updatedAt: l.updatedAt ? new Date(l.updatedAt) : new Date(),
                 expectedCloseDate: l.expectedCloseDate ? new Date(l.expectedCloseDate) : undefined
             })));
         } else {
@@ -48,8 +48,8 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
             const parsed = JSON.parse(storedCustomers);
             setCustomers(parsed.map((c: any) => ({
                 ...c,
-                createdAt: new Date(c.createdAt),
-                updatedAt: new Date(c.updatedAt)
+                createdAt: c.createdAt ? new Date(c.createdAt) : new Date(),
+                updatedAt: c.updatedAt ? new Date(c.updatedAt) : new Date()
             })));
         } else {
             setCustomers(mockCustomers);
@@ -59,7 +59,7 @@ export function DataProvider({ children }: { children: React.ReactNode }) {
             const parsed = JSON.parse(storedActivities);
             setActivities(parsed.map((a: any) => ({
                 ...a,
-                createdAt: new Date(a.createdAt)
+                createdAt: a.createdAt ? new Date(a.createdAt) : new Date()
             })));
         } else {
             setActivities(mockActivities);

@@ -85,7 +85,7 @@ export default function DashboardPage() {
             : allActivities;
 
         return [...activities].sort(
-            (a, b) => b.createdAt.getTime() - a.createdAt.getTime()
+            (a, b) => (b.createdAt?.getTime() || 0) - (a.createdAt?.getTime() || 0)
         );
     }, [user, allActivities]);
 

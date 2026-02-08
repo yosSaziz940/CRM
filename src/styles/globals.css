@@ -5,6 +5,63 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import './design-tokens.css';
 
+:root {
+    /* Sidebar Colors (Always Dark) */
+    --sidebar-background: #0f172a;
+    --sidebar-text: #ffffff;
+    --sidebar-border: #1e293b;
+    --sidebar-hover: rgba(255, 255, 255, 0.1);
+    --sidebar-active: #2563eb;
+}
+
+/* -------------------------------------------------------------------------
+   Dark Mode Overrides
+   ------------------------------------------------------------------------- */
+
+[data-theme="dark"] {
+    /* Invert Neutral Scale */
+    --color-neutral-0: #0f172a;
+    /* was 900 */
+    --color-neutral-50: #1e293b;
+    /* was 800 */
+    --color-neutral-100: #334155;
+    /* was 700 */
+    --color-neutral-200: #475569;
+    /* was 600 */
+    --color-neutral-300: #64748b;
+    /* was 500 */
+    --color-neutral-400: #94a3b8;
+    /* was 400 */
+    --color-neutral-500: #cbd5e1;
+    /* was 300 */
+    --color-neutral-600: #e2e8f0;
+    /* was 200 */
+    --color-neutral-700: #f1f5f9;
+    /* was 100 */
+    --color-neutral-800: #f8fafc;
+    /* was 50 */
+    --color-neutral-900: #ffffff;
+    /* was 0 */
+
+    /* Adjust Semantic Colors for Dark Mode */
+    --color-background-secondary: #1e293b;
+    --color-background-tertiary: #334155;
+
+    /* Ensure shadows are visible on dark backgrounds */
+    --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.5);
+    --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.5), 0 1px 2px -1px rgb(0 0 0 / 0.5);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.5);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5), 0 4px 6px -4px rgb(0 0 0 / 0.5);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.5), 0 8px 10px -6px rgb(0 0 0 / 0.5);
+
+    /* Sidebar Colors */
+    --sidebar-background: #0f172a;
+    --sidebar-text: #ffffff;
+    --sidebar-border: #1e293b;
+    --sidebar-hover: rgba(255, 255, 255, 0.1);
+    --sidebar-active: #2563eb;
+}
+
 /* -------------------------------------------------------------------------
    CSS Reset & Base Styles
    ------------------------------------------------------------------------- */

@@ -52,7 +52,7 @@ export default function CustomerDetailPage() {
     const customerActivities = useMemo(() => {
         return allActivities
             .filter((a) => a.relatedTo.type === 'customer' && a.relatedTo.id === customerId)
-            .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
+            .sort((a, b) => (b.createdAt?.getTime() || 0) - (a.createdAt?.getTime() || 0));
     }, [customerId, allActivities]);
 
     // Get customer's leads

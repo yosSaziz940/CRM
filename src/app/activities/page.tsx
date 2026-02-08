@@ -38,7 +38,7 @@ export default function ActivitiesPage() {
     const filteredActivities = useMemo(() => {
         return allActivities
             .filter(a => filterType === 'all' || a.type === filterType)
-            .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
+            .sort((a, b) => (b.createdAt?.getTime() || 0) - (a.createdAt?.getTime() || 0));
     }, [allActivities, filterType]);
 
     const handleCreateActivity = (data: ActivityFormData) => {

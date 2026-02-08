@@ -4,31 +4,36 @@ import React, { useState } from 'react';
 import { MainLayout } from '@/components/layout';
 import { Card, CardHeader, CardTitle, CardContent, Button, Select } from '@/components/ui';
 import { useToast } from '@/contexts/ToastContext';
+import { usePreferences, Theme, Language } from '@/contexts/PreferencesContext';
 import styles from './page.module.css';
 
 export default function SettingsPage() {
     const { success } = useToast();
-    const [theme, setTheme] = useState('light');
-    const [language, setLanguage] = useState('en');
-    const [emailNotif, setEmailNotif] = useState(true);
-    const [pushNotif, setPushNotif] = useState(true);
+    const { preferences, updatePreferences, resetPreferences, isLoading } = usePreferences();
     const [isSaving, setIsSaving] = useState(false);
 
     const handleSave = async () => {
         setIsSaving(true);
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 800));
+        // Small delay for UX feedback
+        await new Promise(resolve => setTimeout(resolve, 300));
         setIsSaving(false);
         success('Settings saved', 'Your preferences have been updated successfully.');
     };
 
     const handleReset = () => {
-        setTheme('light');
-        setLanguage('en');
-        setEmailNotif(true);
-        setPushNotif(true);
+        resetPreferences();
         success('Restored defaults', 'Settings have been reset to original values.');
     };
+
+    if (isLoading) {
+        return (
+            <MainLayout title="Preferences">
+                <div className={styles.container}>
+                    <div className={styles.loading}>Loading preferences...</div>
+                </div>
+            </MainLayout>
+        );
+    }
 
     return (
         <MainLayout title="Preferences">
@@ -50,8 +55,8 @@ export default function SettingsPage() {
                                         { value: 'dark', label: 'Dark' },
                                         { value: 'system', label: 'System' }
                                     ]}
-                                    value={theme}
-                                    onChange={(e) => setTheme(e.target.value)}
+                                    value={preferences.theme}
+                                    onChange={(e) => updatePreferences({ theme: e.target.value as Theme })}
                                 />
                             </div>
                             <div className={styles.settingItem}>
@@ -65,8 +70,8 @@ export default function SettingsPage() {
                                         { value: 'es', label: 'Spanish' },
                                         { value: 'fr', label: 'French' }
                                     ]}
-                                    value={language}
-                                    onChange={(e) => setLanguage(e.target.value)}
+                                    value={preferences.language}
+                                    onChange={(e) => updatePreferences({ language: e.target.value as Language })}
                                 />
                             </div>
                         </CardContent>
@@ -84,8 +89,8 @@ export default function SettingsPage() {
                                 </div>
                                 <input
                                     type="checkbox"
-                                    checked={emailNotif}
-                                    onChange={(e) => setEmailNotif(e.target.checked)}
+                                    checked={preferences.emailNotifications}
+                                    onChange={(e) => updatePreferences({ emailNotifications: e.target.checked })}
                                 />
                             </div>
                             <div className={styles.settingItem}>
@@ -95,8 +100,8 @@ export default function SettingsPage() {
                                 </div>
                                 <input
                                     type="checkbox"
-                                    checked={pushNotif}
-                                    onChange={(e) => setPushNotif(e.target.checked)}
+                                    checked={preferences.pushNotifications}
+                                    onChange={(e) => updatePreferences({ pushNotifications: e.target.checked })}
                                 />
                             </div>
                         </CardContent>

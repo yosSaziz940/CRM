@@ -39,9 +39,17 @@ export function formatPercent(
 }
 
 /**
+ * Check if a date is valid
+ */
+function isValidDate(date: unknown): date is Date {
+    return date instanceof Date && !isNaN(date.getTime());
+}
+
+/**
  * Format a date relative to now (e.g., "2 hours ago")
  */
-export function formatRelativeTime(date: Date): string {
+export function formatRelativeTime(date: Date | null | undefined): string {
+    if (!isValidDate(date)) return 'N/A';
     const now = new Date();
     const diffInSeconds = Math.floor((now.getTime() - date.getTime()) / 1000);
 
@@ -81,7 +89,8 @@ export function formatRelativeTime(date: Date): string {
 /**
  * Format a date as a short readable string
  */
-export function formatDate(date: Date, options?: Intl.DateTimeFormatOptions): string {
+export function formatDate(date: Date | null | undefined, options?: Intl.DateTimeFormatOptions): string {
+    if (!isValidDate(date)) return 'N/A';
     const defaultOptions: Intl.DateTimeFormatOptions = {
         month: 'short',
         day: 'numeric',
@@ -93,7 +102,8 @@ export function formatDate(date: Date, options?: Intl.DateTimeFormatOptions): st
 /**
  * Format a date with time
  */
-export function formatDateTime(date: Date): string {
+export function formatDateTime(date: Date | null | undefined): string {
+    if (!isValidDate(date)) return 'N/A';
     return date.toLocaleDateString('en-US', {
         month: 'short',
         day: 'numeric',

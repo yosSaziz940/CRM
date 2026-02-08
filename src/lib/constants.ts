@@ -73,4 +73,5 @@ export const STORAGE_KEYS = {
     USER_DATA: 'crm_user_data',
     THEME: 'crm_theme',
     SIDEBAR_COLLAPSED: 'crm_sidebar_collapsed',
+    PREFERENCES: 'crm_preferences',
 } as const;

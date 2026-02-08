@@ -8,8 +8,8 @@
     width: var(--sidebar-width);
     display: flex;
     flex-direction: column;
-    background-color: var(--color-neutral-900);
-    color: var(--color-neutral-0);
+    background-color: var(--sidebar-background);
+    color: var(--sidebar-text);
     z-index: var(--z-sticky);
     transition: width var(--transition-base);
 }
@@ -25,14 +25,14 @@
     justify-content: space-between;
     height: var(--header-height);
     padding: 0 var(--spacing-4);
-    border-bottom: 1px solid var(--color-neutral-800);
+    border-bottom: 1px solid var(--sidebar-border);
 }
 
 .logo {
     display: flex;
     align-items: center;
     gap: var(--spacing-3);
-    color: var(--color-neutral-0);
+    color: var(--sidebar-text);
     text-decoration: none;
 }
 
@@ -67,8 +67,8 @@
 }
 
 .toggleButton:hover {
-    background-color: var(--color-neutral-800);
-    color: var(--color-neutral-0);
+    background-color: var(--sidebar-hover);
+    color: var(--sidebar-text);
 }
 
 /* Navigation */
@@ -99,13 +99,13 @@
 }
 
 .navItem:hover {
-    background-color: var(--color-neutral-800);
-    color: var(--color-neutral-0);
+    background-color: var(--sidebar-hover);
+    color: var(--sidebar-text);
 }
 
 .navItem.active {
     background-color: var(--color-primary-600);
-    color: var(--color-neutral-0);
+    color: var(--sidebar-text);
 }
 
 .navIcon {
@@ -124,7 +124,7 @@
 /* Footer */
 .footer {
     padding: var(--spacing-4);
-    border-top: 1px solid var(--color-neutral-800);
+    border-top: 1px solid var(--sidebar-border);
 }
 
 .footerContent {
