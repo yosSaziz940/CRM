@@ -1,0 +1,407 @@
+/* Header Component Styles */
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--header-height);
+    padding: 0 var(--spacing-6);
+    background-color: var(--color-neutral-0);
+    border-bottom: 1px solid var(--color-neutral-200);
+}
+
+.left {
+    display: flex;
+    align-items: center;
+}
+
+.title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-neutral-900);
+    margin: 0;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-4);
+}
+
+/* Search */
+.search {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.searchIcon {
+    position: absolute;
+    left: var(--spacing-3);
+    display: flex;
+    align-items: center;
+    color: var(--color-neutral-400);
+    pointer-events: none;
+}
+
+.searchInput {
+    width: 280px;
+    height: 40px;
+    padding: var(--spacing-2) var(--spacing-10);
+    font-size: var(--font-size-sm);
+    background-color: var(--color-neutral-100);
+    border: 1px solid transparent;
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-fast);
+}
+
+.searchInput:hover {
+    background-color: var(--color-neutral-50);
+    border-color: var(--color-neutral-200);
+}
+
+.searchInput:focus {
+    outline: none;
+    background-color: var(--color-neutral-0);
+    border-color: var(--color-primary-500);
+    box-shadow: 0 0 0 3px var(--color-primary-100);
+}
+
+.searchShortcut {
+    position: absolute;
+    right: var(--spacing-3);
+    font-size: var(--font-size-xs);
+    color: var(--color-neutral-400);
+    background-color: var(--color-neutral-200);
+    padding: 2px 6px;
+    border-radius: var(--radius-sm);
+    pointer-events: none;
+}
+
+/* Icon Button */
+.iconButton {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: none;
+    border-radius: var(--radius-md);
+    background: none;
+    color: var(--color-neutral-600);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.iconButton:hover {
+    background-color: var(--color-neutral-100);
+    color: var(--color-neutral-900);
+}
+
+.notificationBadge {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 4px;
+    font-size: 11px;
+    font-weight: var(--font-weight-semibold);
+    color: white;
+    background-color: var(--color-danger-500);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* User Menu */
+.userMenu {
+    position: relative;
+}
+
+.userButton {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    padding: var(--spacing-2);
+    border: none;
+    border-radius: var(--radius-md);
+    background: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.userButton:hover {
+    background-color: var(--color-neutral-100);
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.userName {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-neutral-900);
+}
+
+.userRole {
+    font-size: var(--font-size-xs);
+    color: var(--color-neutral-500);
+    text-transform: capitalize;
+}
+
+.chevron {
+    color: var(--color-neutral-400);
+    transition: transform var(--transition-fast);
+}
+
+.chevronUp {
+    transform: rotate(180deg);
+}
+
+/* Dropdown */
+.dropdown {
+    position: absolute;
+    top: calc(100% + var(--spacing-2));
+    right: 0;
+    width: 240px;
+    background-color: var(--color-neutral-0);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    z-index: var(--z-dropdown);
+    animation: fadeIn 150ms ease-out;
+}
+
+.dropdownHeader {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    padding: var(--spacing-4);
+}
+
+.dropdownName {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-neutral-900);
+}
+
+.dropdownEmail {
+    font-size: var(--font-size-xs);
+    color: var(--color-neutral-500);
+}
+
+.dropdownDivider {
+    height: 1px;
+    background-color: var(--color-neutral-200);
+    margin: 0;
+}
+
+.dropdownItem {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    width: 100%;
+    padding: var(--spacing-3) var(--spacing-4);
+    font-size: var(--font-size-sm);
+    color: var(--color-neutral-700);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    text-align: left;
+}
+
+.dropdownItem:hover {
+    background-color: var(--color-neutral-50);
+}
+
+.dropdownItem.danger {
+    color: var(--color-danger-600);
+}
+
+.dropdownItem.danger:hover {
+    background-color: var(--color-danger-50);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Notifications Menu */
+.notificationsMenu {
+    position: relative;
+}
+
+.notificationsDropdown {
+    position: absolute;
+    top: calc(100% + var(--spacing-2));
+    right: 0;
+    width: 360px;
+    background-color: var(--color-neutral-0);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    z-index: var(--z-dropdown);
+    overflow: hidden;
+    animation: fadeIn 150ms ease-out;
+}
+
+.notificationsHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-4);
+    border-bottom: 1px solid var(--color-neutral-200);
+}
+
+.notificationsTitle {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-neutral-900);
+    margin: 0;
+}
+
+.markAllRead {
+    font-size: var(--font-size-xs);
+    color: var(--color-primary-600);
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-weight: var(--font-weight-medium);
+}
+
+.markAllRead:hover {
+    color: var(--color-primary-700);
+    text-decoration: underline;
+}
+
+.notificationList {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.notificationItem {
+    position: relative;
+    display: flex;
+    gap: var(--spacing-3);
+    padding: var(--spacing-4);
+    border-bottom: 1px solid var(--color-neutral-100);
+    transition: background-color var(--transition-fast);
+    cursor: pointer;
+}
+
+.notificationItem:last-child {
+    border-bottom: none;
+}
+
+.notificationItem:hover {
+    background-color: var(--color-neutral-50);
+}
+
+.notificationItem.unread {
+    background-color: var(--color-primary-50);
+}
+
+.notificationItem.unread:hover {
+    background-color: var(--color-primary-100);
+}
+
+.typeIndicator {
+    flex-shrink: 0;
+    width: 4px;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.typeIndicator.info {
+    background-color: var(--color-info-500);
+}
+
+.typeIndicator.success {
+    background-color: var(--color-success-500);
+}
+
+.typeIndicator.warning {
+    background-color: var(--color-warning-500);
+}
+
+.typeIndicator.error {
+    background-color: var(--color-danger-500);
+}
+
+.notificationContent {
+    flex: 1;
+}
+
+.notificationItemTitle {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-neutral-900);
+    margin-bottom: 2px;
+}
+
+.notificationMessage {
+    font-size: var(--font-size-xs);
+    color: var(--color-neutral-600);
+    line-height: 1.5;
+    margin-bottom: var(--spacing-2);
+}
+
+.notificationTime {
+    font-size: 11px;
+    color: var(--color-neutral-400);
+}
+
+.unreadDot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-primary-500);
+    border-radius: var(--radius-full);
+    margin-top: 4px;
+}
+
+.viewAllNotifications {
+    display: block;
+    width: 100%;
+    padding: var(--spacing-3);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-neutral-600);
+    text-align: center;
+    background-color: var(--color-neutral-50);
+    border: none;
+    border-top: 1px solid var(--color-neutral-200);
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+}
+
+.viewAllNotifications:hover {
+    background-color: var(--color-neutral-100);
+    color: var(--color-neutral-900);
+}
+
+.emptyNotifications {
+    padding: var(--spacing-8) var(--spacing-4);
+    text-align: center;
+    color: var(--color-neutral-500);
+    font-size: var(--font-size-sm);
+}

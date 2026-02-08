@@ -1,0 +1,162 @@
+/* Sidebar Component Styles */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: var(--sidebar-width);
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-neutral-900);
+    color: var(--color-neutral-0);
+    z-index: var(--z-sticky);
+    transition: width var(--transition-base);
+}
+
+.collapsed {
+    width: var(--sidebar-collapsed-width);
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--header-height);
+    padding: 0 var(--spacing-4);
+    border-bottom: 1px solid var(--color-neutral-800);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    color: var(--color-neutral-0);
+    text-decoration: none;
+}
+
+.logoIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    color: var(--color-primary-500);
+}
+
+.logoText {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    white-space: nowrap;
+}
+
+.toggleButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: none;
+    border-radius: var(--radius-md);
+    background: none;
+    color: var(--color-neutral-400);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.toggleButton:hover {
+    background-color: var(--color-neutral-800);
+    color: var(--color-neutral-0);
+}
+
+/* Navigation */
+.nav {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--spacing-4) var(--spacing-2);
+}
+
+.navList {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-1);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navItem {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    padding: var(--spacing-3) var(--spacing-3);
+    border-radius: var(--radius-md);
+    color: var(--color-neutral-400);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+}
+
+.navItem:hover {
+    background-color: var(--color-neutral-800);
+    color: var(--color-neutral-0);
+}
+
+.navItem.active {
+    background-color: var(--color-primary-600);
+    color: var(--color-neutral-0);
+}
+
+.navIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.navLabel {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    white-space: nowrap;
+}
+
+/* Footer */
+.footer {
+    padding: var(--spacing-4);
+    border-top: 1px solid var(--color-neutral-800);
+}
+
+.footerContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.version {
+    font-size: var(--font-size-xs);
+    color: var(--color-neutral-500);
+}
+
+/* Collapsed State */
+.collapsed .header {
+    justify-content: center;
+    padding: 0;
+}
+
+.collapsed .logo {
+    justify-content: center;
+}
+
+.collapsed .toggleButton {
+    display: none;
+}
+
+.collapsed .navItem {
+    justify-content: center;
+    padding: var(--spacing-3);
+}
+
+.collapsed .nav {
+    padding: var(--spacing-4) var(--spacing-2);
+}

@@ -1,0 +1,87 @@
+/* Card Component Styles */
+
+.card {
+    background-color: var(--color-neutral-0);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-xs);
+    transition: all var(--transition-fast);
+}
+
+.hover:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-neutral-300);
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+/* Padding Variants */
+.padding-none {
+    padding: 0;
+}
+
+.padding-sm {
+    padding: var(--spacing-3);
+}
+
+.padding-md {
+    padding: var(--spacing-4);
+}
+
+.padding-lg {
+    padding: var(--spacing-6);
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--spacing-4);
+    padding-bottom: var(--spacing-4);
+    border-bottom: 1px solid var(--color-neutral-100);
+    margin-bottom: var(--spacing-4);
+}
+
+.headerContent {
+    flex: 1;
+    min-width: 0;
+}
+
+.headerAction {
+    flex-shrink: 0;
+}
+
+/* Title */
+.title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-neutral-900);
+    margin: 0;
+    line-height: var(--line-height-tight);
+}
+
+/* Description */
+.description {
+    font-size: var(--font-size-sm);
+    color: var(--color-neutral-500);
+    margin-top: var(--spacing-1);
+    line-height: var(--line-height-normal);
+}
+
+/* Content
+.content {
+    /* Content has no default styles, just acts as a container 
+} */
+
+/* Footer */
+.footer {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    padding-top: var(--spacing-4);
+    border-top: 1px solid var(--color-neutral-100);
+    margin-top: var(--spacing-4);
+}

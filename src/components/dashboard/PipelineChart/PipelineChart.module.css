@@ -1,0 +1,64 @@
+/* PipelineChart Component Styles */
+
+.container {
+    width: 100%;
+}
+
+.stages {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+}
+
+.stage {
+    display: grid;
+    grid-template-columns: 120px 1fr 100px;
+    align-items: center;
+    gap: var(--spacing-4);
+}
+
+.stageHeader {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+}
+
+.stageName {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-neutral-700);
+}
+
+.stageCount {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 20px;
+    padding: 0 var(--spacing-2);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-neutral-600);
+    background-color: var(--color-neutral-100);
+    border-radius: var(--radius-full);
+}
+
+.barContainer {
+    height: 12px;
+    background-color: var(--color-neutral-100);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+}
+
+.bar {
+    height: 100%;
+    border-radius: var(--radius-full);
+    transition: width 500ms ease-out;
+}
+
+.stageValue {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-neutral-900);
+    text-align: right;
+}

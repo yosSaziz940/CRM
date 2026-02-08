@@ -1,0 +1,148 @@
+/* Dashboard Page Styles */
+
+.page {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-6);
+    animation: fadeIn 300ms ease-out;
+}
+
+/* Loading */
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--color-neutral-50);
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--color-neutral-200);
+    border-top-color: var(--color-primary-600);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Welcome Section */
+.welcome {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-4);
+}
+
+.welcomeTitle {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-neutral-900);
+    margin: 0 0 var(--spacing-1);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+}
+
+.roleBadge {
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    padding: var(--spacing-1) var(--spacing-2);
+    background-color: var(--color-primary-100);
+    color: var(--color-primary-700);
+    border-radius: var(--radius-sm);
+}
+
+.welcomeSubtitle {
+    font-size: var(--font-size-base);
+    color: var(--color-neutral-500);
+    margin: 0;
+}
+
+.welcomeActions {
+    display: flex;
+    gap: var(--spacing-3);
+}
+
+/* KPI Grid */
+.kpiGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-4);
+}
+
+@media (max-width: 1200px) {
+    .kpiGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .kpiGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Content Grid */
+.contentGrid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: var(--spacing-6);
+}
+
+@media (max-width: 1024px) {
+    .contentGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Pipeline Card */
+.pipelineCard {
+    min-height: 400px;
+}
+
+.pipelineValue {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-1);
+    margin-bottom: var(--spacing-6);
+    padding-bottom: var(--spacing-4);
+    border-bottom: 1px solid var(--color-neutral-100);
+}
+
+.pipelineValueLabel {
+    font-size: var(--font-size-sm);
+    color: var(--color-neutral-500);
+}
+
+.pipelineValueAmount {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-neutral-900);
+}
+
+/* Activity Card */
+.activityCard {
+    min-height: 400px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

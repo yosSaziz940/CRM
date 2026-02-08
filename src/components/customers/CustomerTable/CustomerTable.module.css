@@ -1,0 +1,107 @@
+/* CustomerTable Component Styles */
+
+.container {
+    overflow-x: auto;
+    background-color: var(--color-neutral-0);
+    border: 1px solid var(--color-neutral-200);
+    border-radius: var(--radius-lg);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th {
+    text-align: left;
+    padding: var(--spacing-3) var(--spacing-4);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-neutral-500);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background-color: var(--color-neutral-50);
+    border-bottom: 1px solid var(--color-neutral-200);
+}
+
+.table td {
+    padding: var(--spacing-3) var(--spacing-4);
+    border-bottom: 1px solid var(--color-neutral-100);
+    vertical-align: middle;
+}
+
+.table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.table tbody tr:hover {
+    background-color: var(--color-neutral-50);
+}
+
+/* Customer Cell */
+.customerCell {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    text-decoration: none;
+    color: inherit;
+}
+
+.customerInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.customerName {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-neutral-900);
+}
+
+.customerEmail {
+    font-size: var(--font-size-xs);
+    color: var(--color-neutral-500);
+}
+
+/* Company */
+.company {
+    font-size: var(--font-size-sm);
+    color: var(--color-neutral-700);
+}
+
+/* Date */
+.date {
+    font-size: var(--font-size-sm);
+    color: var(--color-neutral-500);
+}
+
+/* Actions */
+.actions {
+    display: flex;
+    gap: var(--spacing-1);
+}
+
+.actionButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: none;
+    border-radius: var(--radius-md);
+    background: none;
+    color: var(--color-neutral-500);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.actionButton:hover {
+    background-color: var(--color-neutral-100);
+    color: var(--color-neutral-700);
+}
+
+.actionButton.danger:hover {
+    background-color: var(--color-danger-50);
+    color: var(--color-danger-600);
+}

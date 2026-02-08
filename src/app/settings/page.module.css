@@ -1,0 +1,44 @@
+.container {
+    max-width: 1000px;
+}
+
+.grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-6);
+}
+
+.settingItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-4) 0;
+    border-bottom: 1px solid var(--color-neutral-100);
+    gap: var(--spacing-8);
+}
+
+.settingItem:last-child {
+    border-bottom: none;
+}
+
+.settingInfo {
+    flex: 1;
+}
+
+.settingLabel {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-neutral-900);
+}
+
+.settingDescription {
+    font-size: var(--font-size-xs);
+    color: var(--color-neutral-500);
+    margin-top: 2px;
+}
+
+.actions {
+    display: flex;
+    gap: var(--spacing-4);
+    margin-top: var(--spacing-4);
+}

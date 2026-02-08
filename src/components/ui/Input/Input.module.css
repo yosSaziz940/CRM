@@ -1,0 +1,102 @@
+/* Input Component Styles */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-1);
+}
+
+.fullWidth {
+    width: 100%;
+}
+
+.label {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-neutral-700);
+}
+
+.inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input {
+    width: 100%;
+    padding: var(--spacing-2) var(--spacing-3);
+    font-size: var(--font-size-sm);
+    background-color: var(--color-neutral-0);
+    border: 1px solid var(--color-neutral-300);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+    height: 40px;
+}
+
+.input:hover:not(:disabled) {
+    border-color: var(--color-neutral-400);
+}
+
+.input:focus {
+    outline: none;
+    border-color: var(--color-primary-500);
+    box-shadow: 0 0 0 3px var(--color-primary-100);
+}
+
+.input:disabled {
+    background-color: var(--color-neutral-100);
+    color: var(--color-neutral-500);
+    cursor: not-allowed;
+}
+
+.input::placeholder {
+    color: var(--color-neutral-400);
+}
+
+/* Error State */
+.hasError .input {
+    border-color: var(--color-danger-500);
+}
+
+.hasError .input:focus {
+    border-color: var(--color-danger-500);
+    box-shadow: 0 0 0 3px var(--color-danger-100);
+}
+
+/* Icons */
+.hasLeftIcon .input {
+    padding-left: var(--spacing-10);
+}
+
+.hasRightIcon .input {
+    padding-right: var(--spacing-10);
+}
+
+.leftIcon,
+.rightIcon {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-neutral-400);
+    pointer-events: none;
+}
+
+.leftIcon {
+    left: var(--spacing-3);
+}
+
+.rightIcon {
+    right: var(--spacing-3);
+}
+
+/* Helper Text & Error */
+.helperText {
+    font-size: var(--font-size-xs);
+    color: var(--color-neutral-500);
+}
+
+.error {
+    font-size: var(--font-size-xs);
+    color: var(--color-danger-600);
+}

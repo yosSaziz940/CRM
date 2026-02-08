@@ -1,0 +1,31 @@
+/* MainLayout Component Styles */
+
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+.main {
+    flex: 1;
+    margin-left: var(--sidebar-width);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: margin-left var(--transition-base);
+}
+
+.sidebarCollapsed {
+    margin-left: var(--sidebar-collapsed-width);
+}
+
+.content {
+    flex: 1;
+    overflow-y: auto;
+    background-color: var(--color-neutral-50);
+}
+
+.contentInner {
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: var(--spacing-6);
+}
